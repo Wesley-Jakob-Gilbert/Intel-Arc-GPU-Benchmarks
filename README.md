@@ -27,7 +27,7 @@ The goal is to fill a real gap: Intel's official MLPerf submissions use enterpri
 | Llama 3.1 8B Instruct | Q4_K_M | 4.58 GiB | 999 (all GPU) | 1068.94 | 88.49 | 2026-06-16 |
 | Llama 3.1 8B Instruct | Q5_K_M | 5.33 GiB | 999 (all GPU) | 1058.98 | 78.06 | 2026-06-17 |
 | Llama 3.1 8B Instruct | Q8_0 | 7.95 GiB | 999 (all GPU) | 1053.28 | 56.01 | 2026-06-17 |
-| Llama 3.1 70B Instruct | Q4_K_M | 39.59 GiB | 60/80 (hybrid) | 65.38 | — | 2026-06-17 |
+| Llama 3.1 70B Instruct | Q4_K_M | 39.59 GiB | 60/80 (hybrid) | 65.38 | 4.07 | 2026-06-17 |
 
 > Prompt throughput is nearly identical across 8B quantizations (compute-bound). Generation scales inversely with model size (memory-bound). The 70B Q4_K_M exceeds 32GB VRAM — run with `-ngl 60` for hybrid CPU+GPU offload. See [roofline analysis](docs/roofline-analysis.md) for full breakdown.
 
