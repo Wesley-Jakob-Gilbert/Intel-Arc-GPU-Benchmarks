@@ -41,6 +41,7 @@ source /opt/intel/oneapi/setvars.sh
 | Quant | Size | Prompt (t/s) | Generation (t/s) | Date |
 |---|---|---|---|---|
 | Q4_K_M | 4.58 GiB | 1068.94 ± 0.86 | 88.49 ± 0.10 | 2026-06-16 |
+| Q5_K_M | 5.33 GiB | 1058.98 ± 3.23 | 78.06 ± 0.05 | 2026-06-17 |
 | Q8_0 | 7.95 GiB | 1053.28 ± 1.94 | 56.01 ± 0.02 | 2026-06-17 |
 
 > **Note:** Q8_0 fits comfortably in 32GB VRAM (7.95 GiB used). Most consumer GPUs (8–16GB) cannot run Q8_0 on an 8B model at all. Prompt throughput is nearly identical to Q4_K_M (1053 vs 1068 t/s), but generation is lower (56 vs 88 t/s) due to higher memory bandwidth demand per token.

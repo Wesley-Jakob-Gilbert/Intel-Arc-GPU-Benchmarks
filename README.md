@@ -25,9 +25,12 @@ The goal is to fill a real gap: Intel's official MLPerf submissions use enterpri
 | Model | Quant | Size | Prompt (t/s) | Generation (t/s) | Date |
 |---|---|---|---|---|---|
 | Llama 3.1 8B Instruct | Q4_K_M | 4.58 GiB | 1068.94 | 88.49 | 2026-06-16 |
+| Llama 3.1 8B Instruct | Q5_K_M | 5.33 GiB | 1058.98 | 78.06 | 2026-06-17 |
 | Llama 3.1 8B Instruct | Q8_0 | 7.95 GiB | 1053.28 | 56.01 | 2026-06-17 |
 
-*Q5_K_M and 70B models in progress.*
+> Prompt throughput is nearly identical across all quantizations (compute-bound). Generation scales inversely with model size (memory-bound). See [roofline analysis](docs/roofline-analysis.md) for full breakdown.
+
+*70B models in progress.*
 
 ### Blender Rendering
 *Coming soon*
@@ -79,7 +82,7 @@ Or use the automated script: [scripts/run-bench.sh](scripts/run-bench.sh) *(comi
 
 ```
 Intel-Arc-GPU-Benchmarks/
-├── README.md                        # this file — overview and summary results
+├── README.md                        # overview and summary results
 ├── setup/
 │   └── ubuntu-26.04.md              # driver install guide (oneAPI, Level Zero, OpenCL)
 ├── results/
@@ -87,6 +90,8 @@ Intel-Arc-GPU-Benchmarks/
 │   ├── b580-solo/                   # Arc B580 standalone benchmarks
 │   ├── b580-multi/                  # 2–4× B580 multi-GPU benchmarks
 │   └── b70-b580-heterogeneous/      # mixed B70 + B580 cluster benchmarks
+├── docs/
+│   └── roofline-analysis.md         # roofline model analysis of quantization scaling
 ├── hardware/
 │   └── node-configs.md              # exact hardware specs per test system
 └── scripts/
