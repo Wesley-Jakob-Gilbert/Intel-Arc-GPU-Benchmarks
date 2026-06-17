@@ -25,8 +25,9 @@ The goal is to fill a real gap: Intel's official MLPerf submissions use enterpri
 | Model | Quant | Size | Prompt (t/s) | Generation (t/s) | Date |
 |---|---|---|---|---|---|
 | Llama 3.1 8B Instruct | Q4_K_M | 4.58 GiB | 1068.94 | 88.49 | 2026-06-16 |
+| Llama 3.1 8B Instruct | Q8_0 | 7.95 GiB | 1053.28 | 56.01 | 2026-06-17 |
 
-*More quantization levels and models in progress.*
+*Q5_K_M and 70B models in progress.*
 
 ### Blender Rendering
 *Coming soon*
