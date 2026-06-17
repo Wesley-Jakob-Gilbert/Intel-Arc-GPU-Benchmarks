@@ -28,7 +28,7 @@ source /opt/intel/oneapi/setvars.sh
 ./build/bin/llama-bench -m <model.gguf> -ngl 999 -p 512 -n 128
 ```
 
-- `-ngl 999` — offload all layers to GPU
+- `-ngl 999` — offload all layers to GPU (use lower value for models exceeding VRAM)
 - `-p 512` — 512 token prompt processing test
 - `-n 128` — 128 token generation test
 
@@ -58,7 +58,26 @@ Raw output:
 build: 74ade5274 (9672)
 ```
 
-*Q5_K_M and larger models (70B) in progress.*
+---
+
+### Llama 3.1 70B Instruct
+
+> **Note:** The 70B Q4_K_M model (39.59 GiB) exceeds the B70's 32GB VRAM. These results use **hybrid CPU+GPU offloading** — 60 of 80 layers on GPU, remaining 20 layers on CPU (64GB DDR5-6000). This demonstrates the memory wall boundary for a single 32GB GPU. Fully GPU-accelerated results will follow with smaller quantizations (Q2_K / IQ3_XS).
+
+| Quant | Size | ngl | Mode | Prompt (t/s) | Generation (t/s) | Date |
+|---|---|---|---|---|---|---|
+| Q4_K_M | 39.59 GiB | 60/80 | Hybrid GPU+CPU | 65.38 ± 0.02 | — | 2026-06-17 |
+
+*Q2_K and IQ3_XS (fully GPU-accelerated) in progress.*
+
+Raw output:
+```
+| model                          |       size |     params | backend    | ngl |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --------------: | -------------------: |
+| llama 70B Q4_K - Medium        |  39.59 GiB |    70.55 B | SYCL       |  60 |           pp512 |         65.38 ± 0.02 |
+
+build: 74ade5274 (9672)
+```
 
 ---
 
