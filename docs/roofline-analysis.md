@@ -89,6 +89,23 @@ All within 1.5% of each other — consistent with compute-bound behavior. The sm
 
 ---
 
+## Prompt Length — A Third Regime
+
+The prompt length sweep reveals a third behavior beyond simple compute-bound vs memory-bound:
+
+| Prompt tokens | Prompt t/s | Regime |
+|---|---|---|
+| 128 | 789 | **Underutilized** — batch too small to saturate GPU |
+| 512 | 1059 | **Compute-bound** — sweet spot |
+| 1024 | 1026 | Compute-bound with early KV pressure |
+| 2048 | 949 | **KV cache pressure** — attention O(n²) overhead |
+
+This shows the roofline model is necessary but not sufficient — **occupancy** (how well the batch size fills the GPU's compute units) and **attention scaling** introduce additional regimes that a simple FLOP/byte analysis misses.
+
+For production inference serving, this suggests optimal prompt batching around 512 tokens on the B70 for maximum throughput.
+
+---
+
 ## Further Reading
 
 - [Roofline Model — Williams et al. 2009](https://dl.acm.org/doi/10.1145/1498765.1498785)
