@@ -67,8 +67,11 @@ build: 74ade5274 (9672)
 | Quant | Size | ngl | Mode | Prompt (t/s) | Generation (t/s) | Date |
 |---|---|---|---|---|---|---|
 | Q4_K_M | 39.59 GiB | 60/80 | Hybrid GPU+CPU | 65.38 ± 0.02 | 4.07 ± 0.00 | 2026-06-17 |
+| Q2_K | 24.56 GiB | 999 | All GPU | 112.65 ± 0.22 | 5.64 ± 0.01 | 2026-06-17 |
 
-*Q2_K and IQ3_XS (fully GPU-accelerated) in progress.*
+> **Note:** Q2_K (24.56 GiB) fits fully within 32GB VRAM — prompt throughput jumps from 65 → 112 t/s vs hybrid Q4_K_M, confirming the CPU offload overhead cost. Generation remains low (5.64 t/s) due to the model's sheer parameter count being memory-bandwidth-limited even at lower quantization.
+
+*IQ3_XS (fully GPU-accelerated) in progress.*
 
 Raw output:
 ```
@@ -76,6 +79,8 @@ Raw output:
 | ------------------------------ | ---------: | ---------: | ---------- | --: | --------------: | -------------------: |
 | llama 70B Q4_K - Medium        |  39.59 GiB |    70.55 B | SYCL       |  60 |           pp512 |         65.38 ± 0.02 |
 | llama 70B Q4_K - Medium        |  39.59 GiB |    70.55 B | SYCL       |  60 |           tg128 |          4.07 ± 0.00 |
+| llama 70B Q2_K - Medium        |  24.56 GiB |    70.55 B | SYCL       | 999 |           pp512 |        112.65 ± 0.22 |
+| llama 70B Q2_K - Medium        |  24.56 GiB |    70.55 B | SYCL       | 999 |           tg128 |          5.64 ± 0.01 |
 
 build: 74ade5274 (9672)
 ```
