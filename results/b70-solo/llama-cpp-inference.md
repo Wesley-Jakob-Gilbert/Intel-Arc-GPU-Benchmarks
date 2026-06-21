@@ -15,7 +15,7 @@
 
 | Component | Version |
 |---|---|
-| llama.cpp | b9672-74ade5274 |
+| llama.cpp | b9739-845282461 |
 | Backend | SYCL (Intel oneAPI) |
 | oneAPI compiler | 2026.0.0 |
 | intel-opencl-icd | 26.05.37020.3-1 |
@@ -42,9 +42,9 @@ source /opt/intel/oneapi/setvars.sh
 |---|---|---|---|---|
 | Q4_K_M | 4.58 GiB | 1068.94 ± 0.86 | 88.49 ± 0.10 | 2026-06-16 |
 | Q5_K_M | 5.33 GiB | 1058.98 ± 3.23 | 78.06 ± 0.05 | 2026-06-17 |
-| Q8_0 | 7.95 GiB | 1053.28 ± 1.94 | 56.01 ± 0.02 | 2026-06-17 |
+| Q8_0 | 7.95 GiB | 1061.11 ± 15.84 | 56.00 ± 0.03 | 2026-06-21 |
 
-> **Note:** Q8_0 fits comfortably in 32GB VRAM (7.95 GiB used). Most consumer GPUs (8–16GB) cannot run Q8_0 on an 8B model at all. Prompt throughput is nearly identical to Q4_K_M (1053 vs 1068 t/s), but generation is lower (56 vs 88 t/s) due to higher memory bandwidth demand per token.
+> **Note:** Q8_0 fits comfortably in 32GB VRAM (7.95 GiB used). Most consumer GPUs (8–16GB) cannot run Q8_0 on an 8B model at all. Prompt throughput is nearly identical to Q4_K_M (1061 vs 1068 t/s), but generation is lower (56 vs 88 t/s) due to higher memory bandwidth demand per token. Generation throughput is unchanged vs b9672 — Q8_0 tg128 on Arc B70 appears memory-bandwidth-limited regardless of build. PR #21527 did not change this result.
 
 Raw output:
 ```
@@ -52,10 +52,10 @@ Raw output:
 | ------------------------------ | ---------: | ---------: | ---------- | --: | --------------: | -------------------: |
 | llama 8B Q4_K - Medium         |   4.58 GiB |     8.03 B | SYCL       | 999 |           pp512 |       1068.94 ± 0.86 |
 | llama 8B Q4_K - Medium         |   4.58 GiB |     8.03 B | SYCL       | 999 |           tg128 |         88.49 ± 0.10 |
-| llama 8B Q8_0                  |   7.95 GiB |     8.03 B | SYCL       | 999 |           pp512 |       1053.28 ± 1.94 |
-| llama 8B Q8_0                  |   7.95 GiB |     8.03 B | SYCL       | 999 |           tg128 |         56.01 ± 0.02 |
+| llama 8B Q8_0                  |   7.95 GiB |     8.03 B | SYCL       | 999 |           pp512 |       1061.11 ± 15.84 |
+| llama 8B Q8_0                  |   7.95 GiB |     8.03 B | SYCL       | 999 |           tg128 |          56.00 ± 0.03 |
 
-build: 74ade5274 (9672)
+build: 845282461 (9739)
 ```
 
 ---
