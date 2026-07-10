@@ -46,7 +46,7 @@ The goal is to fill a real gap: Intel's official MLPerf submissions use enterpri
 | gpt-oss 120B | MoE | MXFP4 | 59.02 GiB | `--n-cpu-moe 22` (hybrid) | 136.42 | 27.69 | 2026-07-09 |
 | GLM-4.5-Air | MoE | Q4_K_M | 67.96 GiB | `--n-cpu-moe 31` (hybrid) | 85.37 | 14.36 | 2026-07-09 |
 
-> Prompt throughput is nearly identical across 8B quantizations (compute-bound). Generation scales inversely with model size (memory-bound). The 70B Q4_K_M exceeds 32GB VRAM — run with `-ngl 60` for hybrid CPU+GPU offload. Q2_K fits fully on-GPU, yielding 112 t/s prefill vs 65 t/s hybrid. See [roofline analysis](docs/roofline-analysis.md) for full breakdown, or the [full results table](results/b70-solo/llm-inference.md) for raw output and methodology on all 21 models.
+> Prompt throughput is nearly identical across 8B quantizations (compute-bound). Generation scales inversely with model size (memory-bound) for dense models. MoE models recover memory bandwidth, allowing faster generation at the same size. Models exceeding 32GB VRAM — run with `-ngl 60` for hybrid CPU+GPU offload ran significantly slower due to pooling system RAM over PCIe. Compare LLama 70B Q4_K_M that runs hybrid over CPU/GPU at 65 t/s prefill vs. Q2_K which fits fully on-GPU, yielding 112 t/s (nearly 2x increase). See [roofline analysis](docs/roofline-analysis.md) for full breakdown, or the [full results table](results/b70-solo/llm-inference.md) for raw output and methodology on all 21 models.
 
 ### Blender Rendering
 *Coming soon*
