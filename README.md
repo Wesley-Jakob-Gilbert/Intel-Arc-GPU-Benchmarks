@@ -22,16 +22,31 @@ The goal is to fill a real gap: Intel's official MLPerf submissions use enterpri
 
 #### Arc Pro B70 — Solo ([details](results/b70-solo/))
 
-| Model | Quant | Size | ngl | Prompt (t/s) | Generation (t/s) | Date |
-|---|---|---|---|---|---|---|
-| Llama 3.1 8B Instruct | Q4_K_M | 4.58 GiB | 999 (all GPU) | 1068.94 | 88.49 | 2026-06-16 |
-| Llama 3.1 8B Instruct | Q5_K_M | 5.33 GiB | 999 (all GPU) | 1058.98 | 78.06 | 2026-06-17 |
-| Llama 3.1 8B Instruct | Q8_0 | 7.95 GiB | 999 (all GPU) | 1053.28 | 56.01 | 2026-06-17 |
-| Llama 3.1 70B Instruct | Q4_K_M | 39.59 GiB | 60/80 (hybrid) | 65.38 | 4.07 | 2026-06-17 |
-| Llama 3.1 70B Instruct | Q2_K | 24.56 GiB | 999 (all GPU) | 112.65 | 5.64 | 2026-06-17 |
-| Llama 3.1 70B Instruct | IQ3_XS | 27.29 GiB | 999 (all GPU) | 93.05 | 4.18 | 2026-06-17 |
+| Model | Type | Quant | Size | ngl | Prompt (t/s) | Generation (t/s) | Date |
+|---|---|---|---|---|---|---|---|
+| Llama 3.1 8B Instruct | Dense | Q4_K_M | 4.58 GiB | 999 (all GPU) | 1068.94 | 88.49 | 2026-06-16 |
+| Llama 3.1 8B Instruct | Dense | Q5_K_M | 5.33 GiB | 999 (all GPU) | 1058.98 | 78.06 | 2026-06-17 |
+| Llama 3.1 8B Instruct | Dense | Q8_0 | 7.95 GiB | 999 (all GPU) | 1061.11 | 56.00 | 2026-06-21 |
+| Llama 3.1 70B Instruct | Dense | Q4_K_M | 39.59 GiB | 60/80 (hybrid) | 64.64 | 4.04 | 2026-07-09 |
+| Llama 3.1 70B Instruct | Dense | Q2_K | 24.56 GiB | 999 (all GPU) | 111.73 | 5.63 | 2026-07-09 |
+| Llama 3.1 70B Instruct | Dense | IQ3_XS | 27.29 GiB | 999 (all GPU) | 91.40 | 4.16 | 2026-07-09 |
+| Qwen3 8B | Dense | Q4_K_M | 4.68 GiB | 999 (all GPU) | 1036.62 | 81.79 | 2026-07-09 |
+| Nemotron Nano 9B v2 | Dense | Q4_K_M | 6.07 GiB | 999 (all GPU) | 676.38 | 22.14 | 2026-07-09 |
+| Gemma 3 12B it | Dense | Q4_K_M | 6.79 GiB | 999 (all GPU) | 672.84 | 50.80 | 2026-07-09 |
+| DeepSeek-R1-Distill-Qwen 14B | Dense | Q4_K_M | 8.37 GiB | 999 (all GPU) | 497.29 | 47.50 | 2026-07-09 |
+| Qwen3 14B | Dense | Q4_K_M | 8.38 GiB | 999 (all GPU) | 570.98 | 49.21 | 2026-07-09 |
+| Phi-4 14B | Dense | Q4_K_M | 8.43 GiB | 999 (all GPU) | 545.52 | 52.41 | 2026-07-09 |
+| gpt-oss 20B | MoE | MXFP4 | 11.27 GiB | 999 (all GPU) | 861.55 | 50.38 | 2026-07-09 |
+| Mistral Small 3.2 24B | Dense | Q4_K_M | 13.34 GiB | 999 (all GPU) | 366.67 | 32.89 | 2026-07-09 |
+| Gemma 3 27B it | Dense | Q4_K_M | 15.40 GiB | 999 (all GPU) | 291.04 | 26.18 | 2026-07-09 |
+| Qwen3 30B-A3B Instruct | MoE | Q4_K_M | 17.35 GiB | 999 (all GPU) | 1187.50 | 92.95 | 2026-07-09 |
+| GLM-4 32B (0414) | Dense | Q4_K_M | 18.32 GiB | 999 (all GPU) | 253.69 | 24.20 | 2026-07-09 |
+| Qwen3 32B | Dense | Q4_K_M | 18.40 GiB | 999 (all GPU) | 243.74 | 23.47 | 2026-07-09 |
+| LLM-jp-4 32B-A3B thinking | MoE | Q4_K_M | 19.93 GiB | 999 (all GPU) | 946.68 | 80.15 | 2026-07-09 |
+| gpt-oss 120B | MoE | MXFP4 | 59.02 GiB | `--n-cpu-moe 22` (hybrid) | 136.42 | 27.69 | 2026-07-09 |
+| GLM-4.5-Air | MoE | Q4_K_M | 67.96 GiB | `--n-cpu-moe 31` (hybrid) | 85.37 | 14.36 | 2026-07-09 |
 
-> Prompt throughput is nearly identical across 8B quantizations (compute-bound). Generation scales inversely with model size (memory-bound). The 70B Q4_K_M exceeds 32GB VRAM — run with `-ngl 60` for hybrid CPU+GPU offload. Q2_K fits fully on-GPU, yielding 112 t/s prefill vs 65 t/s hybrid. See [roofline analysis](docs/roofline-analysis.md) for full breakdown.
+> Prompt throughput is nearly identical across 8B quantizations (compute-bound). Generation scales inversely with model size (memory-bound). The 70B Q4_K_M exceeds 32GB VRAM — run with `-ngl 60` for hybrid CPU+GPU offload. Q2_K fits fully on-GPU, yielding 112 t/s prefill vs 65 t/s hybrid. See [roofline analysis](docs/roofline-analysis.md) for full breakdown, or the [full results table](results/b70-solo/llm-inference.md) for raw output and methodology on all 21 models.
 
 ### Blender Rendering
 *Coming soon*
