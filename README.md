@@ -52,7 +52,7 @@ The goal is to fill a real gap: Intel's official MLPerf submissions use enterpri
 *Coming soon*
 
 ### GROMACS Molecular Dynamics
-*Coming soon — pending RTX 5090 acquisition (Q1 2027)*
+*Coming soon*
 
 ---
 
