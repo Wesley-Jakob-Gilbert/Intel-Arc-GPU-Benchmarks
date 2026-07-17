@@ -11,7 +11,7 @@ The goal is to fill a real gap: Intel's official MLPerf submissions use enterpri
 | Node | CPU | GPU(s) | VRAM | Status |
 |---|---|---|---|---|
 | Scout Node (Node 1) | Intel Core i9-14900K | Arc Pro B70 32GB | 32GB | Active |
-| Xeon Node (Node 2) | Intel Xeon W9-658X | 3–4× Arc B580 12GB | 36–48GB | Planned |
+| Xeon Node (Node 2) | Intel Xeon W9-658X | 3× Arc B580 12GB | 36–48GB | Active |
 | Heterogeneous Cluster | Both nodes via Tailscale | B70 + B580s | 44–80GB pooled | Planned |
 
 ---
