@@ -1,0 +1,200 @@
+[
+  {
+    "timestamp": "2026-10-28T02:28:11.398293+00:00",
+    "blender_version": {
+      "version": "5.1.1",
+      "build_date": "2026-04-14",
+      "build_time": "01:31:31",
+      "build_commit_date": "2026-04-13",
+      "build_commit_time": "14:35",
+      "build_hash": "b70da489d7f4",
+      "label": "5.1.1",
+      "checksum": "6f9fff89fef154ef7974d1a1c4b916ab4bc1f5618bcb48d5befee1bd0a7c7f2a"
+    },
+    "benchmark_launcher": {
+      "label": "3.3.0",
+      "checksum": "c52cd088936d7cd8fac9b72f0d14055744e5d4ddd40f85ba299892350c494515"
+    },
+    "benchmark_script": {
+      "label": "3.1.2",
+      "checksum": "2881a9f160a24ccd4282e43b861bd727e33562a4a230401343b590d10e890272"
+    },
+    "scene": {
+      "label": "monster",
+      "checksum": "8ff812a02f720433de1403dab447be9541eecca71cc919224a7790d017c1b2ce"
+    },
+    "system_info": {
+      "bitness": "64bit",
+      "machine": "x86_64",
+      "system": "Linux",
+      "dist_name": "Ubuntu",
+      "dist_version": "26.04",
+      "devices": [
+        {
+          "type": "CPU",
+          "name": "Intel Core i9-14900K"
+        },
+        {
+          "type": "ONEAPI",
+          "name": "Intel(R) Graphics [0xe223]",
+          "is_display": false
+        }
+      ],
+      "num_cpu_sockets": 1,
+      "num_cpu_cores": 24,
+      "num_cpu_threads": 32
+    },
+    "device_info": {
+      "device_type": "ONEAPI",
+      "compute_devices": [
+        {
+          "type": "ONEAPI",
+          "name": "Intel(R) Graphics [0xe223]",
+          "is_display": false
+        }
+      ],
+      "num_cpu_threads": 32
+    },
+    "stats": {
+      "device_peak_memory": 2521,
+      "number_of_samples": 769,
+      "time_for_samples": 33.058267,
+      "samples_per_minute": 1395.7174464106058,
+      "total_render_time": 34.0383,
+      "render_time_no_sync": 33.0584,
+      "time_limit": 30
+    }
+  },
+  {
+    "timestamp": "2026-10-28T02:28:55.730695+00:00",
+    "blender_version": {
+      "version": "5.1.1",
+      "build_date": "2026-04-14",
+      "build_time": "01:31:31",
+      "build_commit_date": "2026-04-13",
+      "build_commit_time": "14:35",
+      "build_hash": "b70da489d7f4",
+      "label": "5.1.1",
+      "checksum": "6f9fff89fef154ef7974d1a1c4b916ab4bc1f5618bcb48d5befee1bd0a7c7f2a"
+    },
+    "benchmark_launcher": {
+      "label": "3.3.0",
+      "checksum": "c52cd088936d7cd8fac9b72f0d14055744e5d4ddd40f85ba299892350c494515"
+    },
+    "benchmark_script": {
+      "label": "3.1.2",
+      "checksum": "2881a9f160a24ccd4282e43b861bd727e33562a4a230401343b590d10e890272"
+    },
+    "scene": {
+      "label": "junkshop",
+      "checksum": "f5515a21a1337b908212d8d76733530df83014464a24c585ab7b96000da0cdce"
+    },
+    "system_info": {
+      "bitness": "64bit",
+      "machine": "x86_64",
+      "system": "Linux",
+      "dist_name": "Ubuntu",
+      "dist_version": "26.04",
+      "devices": [
+        {
+          "type": "CPU",
+          "name": "Intel Core i9-14900K"
+        },
+        {
+          "type": "ONEAPI",
+          "name": "Intel(R) Graphics [0xe223]",
+          "is_display": false
+        }
+      ],
+      "num_cpu_sockets": 1,
+      "num_cpu_cores": 24,
+      "num_cpu_threads": 32
+    },
+    "device_info": {
+      "device_type": "ONEAPI",
+      "compute_devices": [
+        {
+          "type": "ONEAPI",
+          "name": "Intel(R) Graphics [0xe223]",
+          "is_display": false
+        }
+      ],
+      "num_cpu_threads": 32
+    },
+    "stats": {
+      "device_peak_memory": 7680,
+      "number_of_samples": 513,
+      "time_for_samples": 32.076285,
+      "samples_per_minute": 959.5874335198107,
+      "total_render_time": 35.1084,
+      "render_time_no_sync": 32.0765,
+      "time_limit": 30
+    }
+  },
+  {
+    "timestamp": "2026-10-28T02:29:31.984252+00:00",
+    "blender_version": {
+      "version": "5.1.1",
+      "build_date": "2026-04-14",
+      "build_time": "01:31:31",
+      "build_commit_date": "2026-04-13",
+      "build_commit_time": "14:35",
+      "build_hash": "b70da489d7f4",
+      "label": "5.1.1",
+      "checksum": "6f9fff89fef154ef7974d1a1c4b916ab4bc1f5618bcb48d5befee1bd0a7c7f2a"
+    },
+    "benchmark_launcher": {
+      "label": "3.3.0",
+      "checksum": "c52cd088936d7cd8fac9b72f0d14055744e5d4ddd40f85ba299892350c494515"
+    },
+    "benchmark_script": {
+      "label": "3.1.2",
+      "checksum": "2881a9f160a24ccd4282e43b861bd727e33562a4a230401343b590d10e890272"
+    },
+    "scene": {
+      "label": "classroom",
+      "checksum": "936f0a528f03eba291c67ea87743a0ebde58938fb87471b262721b89b46b875d"
+    },
+    "system_info": {
+      "bitness": "64bit",
+      "machine": "x86_64",
+      "system": "Linux",
+      "dist_name": "Ubuntu",
+      "dist_version": "26.04",
+      "devices": [
+        {
+          "type": "CPU",
+          "name": "Intel Core i9-14900K"
+        },
+        {
+          "type": "ONEAPI",
+          "name": "Intel(R) Graphics [0xe223]",
+          "is_display": false
+        }
+      ],
+      "num_cpu_sockets": 1,
+      "num_cpu_cores": 24,
+      "num_cpu_threads": 32
+    },
+    "device_info": {
+      "device_type": "ONEAPI",
+      "compute_devices": [
+        {
+          "type": "ONEAPI",
+          "name": "Intel(R) Graphics [0xe223]",
+          "is_display": false
+        }
+      ],
+      "num_cpu_threads": 32
+    },
+    "stats": {
+      "device_peak_memory": 2322,
+      "number_of_samples": 513,
+      "time_for_samples": 33.236861,
+      "samples_per_minute": 926.0802336297644,
+      "total_render_time": 33.9127,
+      "render_time_no_sync": 33.2376,
+      "time_limit": 30
+    }
+  }
+]

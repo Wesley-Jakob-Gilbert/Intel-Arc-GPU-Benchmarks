@@ -79,7 +79,14 @@ The goal is to fill a real gap: Intel's official MLPerf submissions use enterpri
 > Prompt throughput is nearly identical across 8B quantizations (compute-bound). Generation scales inversely with model size (memory-bound) for dense models. MoE models recover memory bandwidth, allowing faster generation at the same size. Models exceeding 32GB VRAM — run with `-ngl 60` for hybrid CPU+GPU offload ran significantly slower due to pooling system RAM over PCIe. Compare Llama 70B Q4_K_M that runs hybrid over CPU/GPU at 146 t/s prefill vs. Q2_K which fits fully on-GPU, yielding 228 t/s (~1.6× increase). See [roofline analysis](docs/roofline-analysis.md) for full breakdown, or the [full results table](results/b70-solo/llm-inference-Vulkan.md) for raw output and methodology on all 21 models.
 
 ### Blender Rendering
-*Coming soon*
+
+Blender 5.1.1, Cycles, official Blender Open Data Benchmark launcher 3.3.0 ([details](results/b70-solo/blender.md)). Samples per minute, higher is better; one run per scene (2026-10-27).
+
+| Scene | Arc Pro B70 (oneAPI) | i9-14900K (CPU) | GPU speedup |
+|---|---|---|---|
+| monster | 1395.72 | 246.47 | 5.66x |
+| junkshop | 959.59 | 196.64 | 4.88x |
+| classroom | 926.08 | 135.16 | 6.85x |
 
 ### GROMACS Molecular Dynamics
 *Coming soon*
