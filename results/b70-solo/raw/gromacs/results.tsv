@@ -1,0 +1,19 @@
+bench	mode	rep	ns_per_day	hours_per_ns	wall_s	b70_avg_W	energy_kJ	gpu	flags
+benchMEM	gpu	1	235.412	0.102	15.3	180.9	2.77	Intel(R) Graphics [0xe223]	-nb gpu -pme gpu -bonded gpu -update auto -ntmpi 1 -ntomp 8 -pin on -pinstride 2
+benchMEM	gpu	2	235.872	0.102	15.3	183.5	2.81	Intel(R) Graphics [0xe223]	-nb gpu -pme gpu -bonded gpu -update auto -ntmpi 1 -ntomp 8 -pin on -pinstride 2
+benchMEM	gpu	3	235.672	0.102	15.3	185.2	2.83	Intel(R) Graphics [0xe223]	-nb gpu -pme gpu -bonded gpu -update auto -ntmpi 1 -ntomp 8 -pin on -pinstride 2
+benchMEM	cpu	1	46.729	0.514	39.0	46.1	1.80	Intel(R) Graphics [0xe223]	-nb cpu -pme cpu -bonded cpu -update cpu
+benchMEM	cpu	2	46.639	0.515	39.1	45.8	1.79	Intel(R) Graphics [0xe223]	-nb cpu -pme cpu -bonded cpu -update cpu
+benchMEM	cpu	3	46.483	0.516	39.0	45.7	1.79	Intel(R) Graphics [0xe223]	-nb cpu -pme cpu -bonded cpu -update cpu
+benchRIB	gpu	1	11.057	2.171	174.9	170.6	29.84	Intel(R) Graphics [0xe223]	-nb gpu -pme gpu -bonded gpu -update auto -ntmpi 1 -ntomp 8 -pin on -pinstride 2
+benchRIB	gpu	2	11.091	2.164	173.5	172.5	29.93	Intel(R) Graphics [0xe223]	-nb gpu -pme gpu -bonded gpu -update auto -ntmpi 1 -ntomp 8 -pin on -pinstride 2
+benchRIB	gpu	3	11.092	2.164	173.5	172.6	29.95	Intel(R) Graphics [0xe223]	-nb gpu -pme gpu -bonded gpu -update auto -ntmpi 1 -ntomp 8 -pin on -pinstride 2
+benchRIB	cpu	1	2.651	9.054	302.6	45.5	13.78	Intel(R) Graphics [0xe223]	-nb cpu -pme cpu -bonded cpu -update cpu
+benchRIB	cpu	2	2.725	8.807	299.5	44.9	13.46	Intel(R) Graphics [0xe223]	-nb cpu -pme cpu -bonded cpu -update cpu
+benchRIB	cpu	3	2.723	8.813	299.6	45.0	13.49	Intel(R) Graphics [0xe223]	-nb cpu -pme cpu -bonded cpu -update cpu
+benchPEP	gpu	1	1.819	13.196	98.5	213.1	21.00	Intel(R) Graphics [0xe223]	-nb gpu -pme gpu -bonded gpu -update auto -ntmpi 1 -ntomp 8 -pin on -pinstride 2
+benchPEP	gpu	2	1.816	13.215	98.0	215.2	21.08	Intel(R) Graphics [0xe223]	-nb gpu -pme gpu -bonded gpu -update auto -ntmpi 1 -ntomp 8 -pin on -pinstride 2
+benchPEP	gpu	3	1.813	13.239	98.2	215.2	21.12	Intel(R) Graphics [0xe223]	-nb gpu -pme gpu -bonded gpu -update auto -ntmpi 1 -ntomp 8 -pin on -pinstride 2
+benchPEP	cpu	1	0.194	123.679	278.3	45.6	12.69	Intel(R) Graphics [0xe223]	-nb cpu -pme cpu -bonded cpu -update cpu
+benchPEP	cpu	2	0.194	123.755	278.4	44.9	12.51	Intel(R) Graphics [0xe223]	-nb cpu -pme cpu -bonded cpu -update cpu
+benchPEP	cpu	3	0.194	123.791	278.5	44.9	12.51	Intel(R) Graphics [0xe223]	-nb cpu -pme cpu -bonded cpu -update cpu
