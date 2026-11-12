@@ -88,8 +88,17 @@ Blender 5.1.1, Cycles, official Blender Open Data Benchmark launcher 3.3.0 ([det
 | junkshop | 959.59 | 196.64 | 4.88x |
 | classroom | 926.08 | 135.16 | 6.85x |
 
-### GROMACS Molecular Dynamics
-*Coming soon*
+### GROMACS Molecular Dynamics (SYCL)
+
+GROMACS 2026.4 with the oneAPI SYCL backend, standard MPI-NAT benchmarks, mean of 3 runs ([details and methodology](results/b70-solo/gromacs.md)).
+
+| Benchmark | Atoms | Arc Pro B70 (ns/day) | i9-14900K CPU only (ns/day) | Speedup |
+|---|---|---|---|---|
+| benchMEM | 81,743 | 235.7 | 46.6 | 5.06x |
+| benchRIB | 2,037,824 | 11.08 | 2.70 | 4.10x |
+| benchPEP | 12,495,503 | 1.816 | 0.194 | 9.36x |
+
+> GPU speedup grows with system size. Runs need `-notunepme` for `-resethway` to work on this build; see the details page.
 
 ---
 
